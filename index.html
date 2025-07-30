@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>สุขสันต์วันเกิด ปริม 21 ปี🎁</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+      animation: colorShift 3s infinite alternate;
+    }
+
+    @keyframes colorShift {
+      0% { color: #ff7e5f; }
+      25% { color: #feb47b; }
+      50% { color: #6a11cb; }
+      75% { color: #2575fc; }
+      100% { color: #ff7e5f; }
+    }
+
+    .container {
+      padding: 24px 12px;
+      animation: fadeIn 2s ease-in;
+      background-image: url('https://image.freepik.com/free-ai-image/glowing-butterflies-iridescent-illustration_415501172.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 22px;
+      box-shadow: 0 0 32px 8px rgba(255, 182, 193, 0.8), 0 0 12px rgba(138, 198, 209, 0.6);
+      max-width: 480px;
+      margin: 48px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 24px auto 0 auto;
+      width: 100%;
+    }
+
+    img {
+      width: 92%;
+      max-width: 270px;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(187, 222, 214, 0.7), 0 0 12px rgba(255, 182, 193, 0.7);
+      animation: pulse 4s infinite;
+      object-fit: cover;
+      display: block;
+      border: 3px solid #ffd700;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 24px rgba(187, 222, 214, 0.7), 0 0 12px rgba(255, 182, 193, 0.7); }
+      50% { box-shadow: 0 0 32px rgba(255, 215, 0, 0.9), 0 0 24px rgba(250, 227, 217, 0.7); }
+    }
+
+    .styled-text {
+      display: inline-block;
+      padding: 22px;
+      background: linear-gradient(90deg, #ffb6b9 0%, #fae3d9 100%);
+      border: 2.5px solid #ffd700;
+      border-radius: 16px;
+      font-size: 1.25em;
+      color: #23395d;
+      box-shadow: 0 2px 12px rgba(187, 222, 214, 0.6);
+      width: 88%;
+      margin: 24px auto;
+      text-align: left;
+    }
+
+    #hiddenText {
+      display: none; /* Initially hide the text */
+    }
+
+    /* Link container */
+    .link-container {
+      margin-top: 22px;
+      font-size: 1.7em;
+    }
+    .link-container a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s, background 0.3s;
+      font-size: 2em;
+      border-radius: 50%;
+      padding: 0.2em 0.25em;
+      background: linear-gradient(135deg, #ffd700 0%, #ffb6b9 100%);
+      box-shadow: 0 2px 12px rgba(187, 222, 214, 0.6);
+    }
+    .link-container a:hover {
+      color: #ffd700;
+      background: #fff;
+      box-shadow: 0 0 24px rgba(255, 215, 0, 0.7);
+    }
+
+    #giftLinkText {
+      display: none;
+      margin-top: 22px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #ffd700;
+      font-size: 1em;
+      width: 230px;
+      background: #fae3d9;
+      color: #23395d;
+      margin-right: 8px;
+      box-shadow: 0 2px 8px rgba(187, 222, 214, 0.5);
+    }
+
+    button {
+      background-color: #ffd700;
+      color: #23395d;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 2px 12px rgba(187, 222, 214, 0.5);
+      transition: background 0.2s, color 0.2s;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #ffb6b9;
+      color: #fff;
+    }
+
+    /* Gift box */
+    #giftScreen, #mainContent {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+    #giftScreen.active, #mainContent.active {
+      display: flex;
+    }
+    .gift-box {
+      width: 210px;
+      height: 210px;
+      background: linear-gradient(135deg, #ffd700 0%, #ffb6b9 100%);
+      border-radius: 24px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 12px 32px #bbded6, 0 0 24px #ffd700;
+      animation: bounce 1.5s infinite alternate;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .gift-lid {
+      width: 210px;
+      height: 44px;
+      background: #23395d;
+      position: absolute;
+      top: -44px;
+      border-radius: 24px 24px 0 0;
+      transition: transform 0.6s ease;
+      box-shadow: 0 2px 12px #bbded6;
+    }
+    .gift-box.open .gift-lid {
+      transform: rotateX(75deg) translateY(-24px);
+    }
+
+    /* Falling hearts */
+    #falling-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99;
+    }
+    .falling-heart {
+      position: absolute;
+      top: -40px;
+      font-size: 2em;
+      animation: heart-fall linear forwards;
+    }
+    @keyframes heart-fall {
+      to {
+        top: 100vh;
+        opacity: 0.2;
+        transform: scale(0.8) rotate(30deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="popSound">
+    <source src="072007_fireworks-47593.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="giftScreen" class="active">
+    <div class="gift-box" onclick="openGift(this)">
+      <div class="gift-lid"></div>
+    </div>
+    <p style="margin-top:20px; font-size:2.2em; color:#23395d;"></p>
+  </div>
+
+  <div class="container" id="mainContent">
+    <h1>สุขสันต์วันเกิด ปริม 21 ปี🎉</h1>
+
+    <div class="image-wrapper">
+      <img src="friend.jpg" alt="รูปปริมสุดน่ารัก">
+    </div>
+
+    <button onclick="toggleText()">เปิด</button>
+
+    <div id="hiddenText">
+      <p class="styled-text">
+        <span style="font-size:1.3em; font-weight:bold;">ปริม 💕</span><br>
+        ขอให้วันเกิดนี้เป็นวันพิเศษที่สุด<br>
+        มีแต่รอยยิ้ม เสียงหัวเราะ และคนดีๆ อยู่รอบข้างเสมอ 💗<br>
+      </p>
+    </div>
+
+    <div class="link-container">
+      <a href="javascript:void(0);" onclick="showGiftLink()">🧧</a>
+    </div>
+
+    <div id="giftLinkText">
+      <p style="font-size:1.3em;">
+        <span style="font-weight:bold; color:#2b7cff;">ลิงค์อั่งเปา:</span><br>
+        <input type="text" value="https://gift.truemoney.com/campaign/?v=0198598dd45b74a8a02faa231bd046b484X" id="giftLink" readonly>
+        <button onclick="copyGiftLink()">คัดลอก</button>
+      </p>
+    </div>
+
+  </div>
+
+  <div id="falling-hearts"></div>
+
+  <script>
+    function openGift(box) {
+      const pop = document.getElementById('popSound');
+      pop.play();
+      box.classList.add('open');
+      
+      setTimeout(() => {
+        document.getElementById('giftScreen').classList.remove('active');
+        document.getElementById('mainContent').classList.add('active');
+      }, 700);
+    }
+
+    function showGiftLink() {
+      var giftLinkText = document.getElementById('giftLinkText');
+      if (giftLinkText.style.display === 'none' || giftLinkText.style.display === '') {
+        giftLinkText.style.display = 'block';
+      } else {
+        giftLinkText.style.display = 'none';
+      }
+    }
+
+    function copyGiftLink() {
+      var copyText = document.getElementById("giftLink");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* สำหรับมือถือ */
+      document.execCommand("copy");
+      alert("คัดลอกลิงค์อั่งเปาแล้ว: " + copyText.value);
+    }
+
+    function toggleText() {
+      var hiddenText = document.getElementById('hiddenText');
+      if (hiddenText.style.display === 'none' || hiddenText.style.display === '') {
+        hiddenText.style.display = 'block';
+      } else {
+        hiddenText.style.display = 'none';
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'falling-heart';
+      heart.innerHTML = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (2 + Math.random() * 2) + 's';
+      document.getElementById('falling-hearts').appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
